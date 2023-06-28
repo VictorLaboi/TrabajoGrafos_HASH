@@ -17,7 +17,7 @@ namespace ListasSimplementeLigadas
             
             verticeA.AgregarArit("A","D");
             verticeB.AgregarArit("B","D");
-
+            Console.ReadKey();
         }
     }
 }

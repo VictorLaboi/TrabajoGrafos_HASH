@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TrabajoGrafos": {
+      "commandName": "Project"
+    },
+    "Perfil 1": {
+      "commandName": "Executable"
+    }
+  }
+}

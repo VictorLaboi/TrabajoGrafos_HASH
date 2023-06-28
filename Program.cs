@@ -14,7 +14,7 @@ namespace ListasSimplementeLigadas
             Lista verticeB = new Lista("B");
             Lista verticeC = new Lista("C");
             Lista verticeD = new Lista ("C");
-
+            
             verticeA.AgregarArit("A","D");
             verticeB.AgregarArit("B","D");
 

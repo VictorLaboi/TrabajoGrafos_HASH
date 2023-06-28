@@ -30,8 +30,44 @@ namespace TrabajoGrafos
                 Nodo nodoNuevo = new Nodo(datos);
                 stuffs[posit] = nodoNuevo;
             }
-            else { 
-                
+            else {
+                Nodo nodoNo = stuffs[posit];
+                while (nodoNo.Siguiente!= null) {
+                    nodoNo = nodoNo.Siguiente;
+                }
+                Nodo newNode = new Nodo(datos);
+                nodoNo.Siguiente = newNode;
+            }
+
+        }
+        public void MostrarTablaHash()
+        {
+            for (int i = 0; i < tam; i++)
+            {
+                Console.Write($"Índice {i}: ");
+
+                Nodo nodo = stuffs[i];
+                if (nodo != null)
+                {
+                    Console.Write($"{nodo.Valor}");
+
+                    if (nodo.Siguiente != null)
+                    {
+                        
+                        Console.Write(" -> ");
+                        Nodo Enlace = nodo.Siguiente;
+                        while (Enlace!= null ) {
+                            Console.Write($"{Enlace.Valor} ");
+                            Enlace = Enlace.Siguiente;
+                        }
+                        
+                    }
+                }
+                else
+                {
+                    Console.Write("Vacío");
+                }
+                Console.WriteLine();
             }
         }
 

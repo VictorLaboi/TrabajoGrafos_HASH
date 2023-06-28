@@ -19,6 +19,7 @@ namespace ListasSimplementeLigadas
             verticeB.AgregarArit(verticeC);
             verticeC.AgregarArit(verticeD);
             verticeD.AgregarArit(verticeA);
+            Hash hashTable = new Hash(Grafo.Count);
         }
     }
 }

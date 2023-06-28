@@ -16,7 +16,6 @@ namespace TrabajoGrafos
         public Lista(string valor)
         {
             nodoInicio = new Nodo(valor);
-
         }
         public void AgregarNodo(string valor)
         {
@@ -54,21 +53,6 @@ namespace TrabajoGrafos
 
 
             return null;
-        }
-        public List<string> ObtenerNodos()
-        {
-            List<string> nodos = new List<string>();
-
-            Nodo nodoActual = nodoInicio;
-
-            while (nodoActual != null)
-            {
-                nodos.Add(nodoActual.Valor);
-                nodoActual = nodoActual.Siguiente;
-            }
-
-            return nodos;
-        }
 
     }
 }

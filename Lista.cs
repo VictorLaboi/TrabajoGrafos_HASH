@@ -16,6 +16,7 @@ namespace TrabajoGrafos
         public Lista(string valor)
         {
             nodoInicio = new Nodo(valor);
+
         }
         public void AgregarNodo(string valor)
         {
@@ -31,9 +32,19 @@ namespace TrabajoGrafos
             nodoActual.Siguiente = nuevoNodo;
         }
 
-        public void AgregarArit(Lista vertice)
+        public void AgregarArit(string vertice1, string vertice2)
         {
-            AgregarNodo(vertice.nodoInicio.Valor);
+            Nodo nodoInicial = BuscarNodo(vertice1);
+            Nodo nodoFinal = BuscarNodo(vertice2);
+
+            if (nodoInicial != null && nodoFinal != null)
+            {
+                Console.WriteLine(nodoInicial+""+nodoFinal);
+            }
+            else
+            {
+                Console.WriteLine("NODO NO ENCONTRADO!");
+            }
         }
 
         private Nodo BuscarNodo(string dato)
@@ -53,6 +64,21 @@ namespace TrabajoGrafos
 
 
             return null;
+        }
+        public List<string> ObtenerNodos()
+        {
+            List<string> nodos = new List<string>();
+
+            Nodo nodoActual = nodoInicio;
+
+            while (nodoActual != null)
+            {
+                nodos.Add(nodoActual.Valor);
+                nodoActual = nodoActual.Siguiente;
+            }
+
+            return nodos;
+        }
 
     }
 }

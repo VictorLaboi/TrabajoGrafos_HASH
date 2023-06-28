@@ -8,18 +8,17 @@ namespace ListasSimplementeLigadas
     {
         static void Main(string[] args)
         {
-            Lista lista = new Lista();
-            lista.AgregarNodo("nodo1");
-            lista.AgregarNodo("nodo2");
-            lista.AgregarNodo("nodo3");
-            lista.AgregarNodo("nodo4");
+            List <Lista> Grafo = new List <Lista> ();
 
-            lista.AgregarArit("nodo1", "nodo2");
-            lista.AgregarArit("nodo2", "nodo3");
-            lista.AgregarArit("nodo3", "nodo4");
-            lista.AgregarArit("nodo4", "nodo1");
-            lista.MostrarGrafo();
-            Console.ReadKey();
+            Lista verticeA = new Lista("A");
+            Lista verticeB = new Lista("B");
+            Lista verticeC = new Lista("C");
+            Lista verticeD = new Lista ("C");
+
+            verticeA.AgregarArit(verticeB);
+            verticeB.AgregarArit(verticeC);
+            verticeC.AgregarArit(verticeD);
+            verticeD.AgregarArit(verticeA);
         }
     }
 }

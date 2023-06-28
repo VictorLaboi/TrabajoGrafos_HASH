@@ -12,11 +12,11 @@ namespace TrabajoGrafos
     internal class Lista
     {
         public Nodo nodoInicio;
-        public List<(string, string)> relaciones;
-        public Lista()
+        
+        public Lista(string valor)
         {
-            relaciones = new List<(string, string)>();
-            nodoInicio = new Nodo();
+            nodoInicio = new Nodo(valor);
+
         }
         public void AgregarNodo(string valor)
         {
@@ -31,26 +31,10 @@ namespace TrabajoGrafos
 
             nodoActual.Siguiente = nuevoNodo;
         }
-        public void AgregarNodoInicio(string valor)
+
+        public void AgregarArit(Lista vertice)
         {
-            Nodo nodoActual = nodoInicio;
-            Nodo nuevoNodo = new Nodo(valor, nodoActual.Siguiente);
-            nodoActual.Siguiente = nuevoNodo;
-        }
-        public void AgregarArit(String inicio, string final)
-        {
-            Nodo nodoActual = nodoInicio;
-            Nodo nodoInicial = BuscarNodo(inicio);
-            Nodo nodoFinal = BuscarNodo(final);
-            if (nodoInicial!=null && nodoFinal!= null) {
-                nodoInicial.Siguiente = nodoFinal;
-                nodoFinal.Siguiente = nodoInicial;
-                relaciones.Add((inicio, final));
-            }
-            else
-            {
-                Console.Write("NODO NO ENCONTRADO!");
-            }
+            AgregarNodo(vertice.nodoInicio.Valor);
         }
 
         private Nodo BuscarNodo(string dato)
@@ -67,17 +51,11 @@ namespace TrabajoGrafos
                         return nodoBusqueda;
                     }
                 }
-        
+
 
             return null;
         }
-        public void MostrarGrafo()
-        {
-            foreach ((string inicio, string final) in relaciones)
-            {
-                Console.WriteLine($"{inicio} --> {final}");
-            }
-        }
+        
 
     }
 }
